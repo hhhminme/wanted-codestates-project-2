@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+카트 OpenAPI를 이용한 전적 검색 사이트 개발
+===
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 소개
+    - 해당 과제는 OpenAPI 기능을 이용하여 실제 서비스중인 사이트와 유사 사이트를 개발하며 기본적인 frontend 개발에 대한 숙련도를 확인하기 위함입니다.
+    - 넥슨코리아 인텔리전스랩스에서 원티드 프리온보딩 과정을 진행하기 위해 출제한 과제로서 해당 목적외의 사용을 금합니다.
 
-## Available Scripts
+## 과제
+### 개발 내용
+1. [카트라이더 TMI(전적 검색 사이트)](https://tmi.nexon.com/kart)의 페이지중에서 필수 항목 1개와 선택파일 1개 이상의 페이지 개발(총 2개 이상)
+    - 필수 : [개인 전적 조회 페이지](https://tmi.nexon.com/kart/user?nick=BBEESSTT&matchType=indi)를 비롯한 1개 이상의 추가 페이지 개발
+    - 선택
+        - [랭킹 페이지](https://tmi.nexon.com/kart/rank)
+        - [트랙 스피드개인전 페이지](https://tmi.nexon.com/kart/track/)
+        - [트랙 스피드팀전 페이지](https://tmi.nexon.com/kart/track?matchType=team)
+1. [카트라이더 OpenAPI](https://developers.nexon.com/kart)를 이용하여 데이터 조회(가입 후 키 발급 필요)
+1. 페이지 이동과 닉네임 검색이 가능한 상단 메뉴바 추가
 
-In the project directory, you can run:
+### 필수 조건
+1. React, Vuejs 두가지 중 하나의 프레임워크 사용하여 SPA로 구현 V 
+1. 두 종류 이상의 그레프 포함 필수 
+1. 다섯 종류 이상의 애니메이션 포함 필수
+1. 필요한 경우 서버 개발은 가능하나 SSR 사용 불가
+1. 하나 이상의 vanila script로 만들어진 모듈 구현
+1. 해당 사이트의 리소스를 사용하여도 무방하며 Bootstrap과 같은 UI 프레임워크 테마 사용도 가능
 
-### `npm start`
+### 선택 조건
+1. 컴포넌트 기반의 구조를 가질 수 있도록 설계
+1. 라이브러리를 사용하지 않고 그레프, 애니메이션을 구현
+1. UI/UX를 고려한 기능 및 페이지 구성
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 참고 사항
+* 많은 기능 보다는 아이디어 기반의 기능에 중점을 둠
+* 사이트명은 개별 선정
+* [카트라이더 TMI(전적 검색 사이트)](https://tmi.nexon.com/kart)의 모든 데이터가 OpenAPI로 제공되지 않으므로 제공되는 범위에서만 제작
+* 데이터 저장이 필요한 경우 firebase와 같은 클라우드 서비스 사용 가능
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 제출 방식
+* 개인 github public 프로젝트 링크 공유(프로젝트명 무관)
+* 결과물에 대한 전반적인 설명과 그래프, 애니메이션 적용 지점을 README 파일에 기제
+* 제출된 코드는 수정없이 빌드 및 로컬 실행이 가능해야 함
+* 불필요한 코드가 포함되지 않도록 gitignore 파일 적용 필수
