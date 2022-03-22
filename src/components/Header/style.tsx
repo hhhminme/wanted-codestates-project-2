@@ -136,6 +136,7 @@ export const SectionInner = styled.div`
   }
   .inner-tap {
     display: inline-block;
+    z-index: 10;
 
     ul {
       display: flex;

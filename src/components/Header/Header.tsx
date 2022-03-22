@@ -5,10 +5,7 @@ import { useAppSelector, useAppDispatch } from "../../redux/hooks";
 import { set } from "../../redux/tabSlice";
 import * as S from "./style";
 
-interface Props {
-  searchId: string;
-}
-const Header = ({ searchId }: Props) => {
+const Header = () => {
   const tabAddress = [
     {
       name: "홈",
@@ -146,7 +143,7 @@ const Header = ({ searchId }: Props) => {
           </div>
           {tabCount !== 0 && (
             <div className="inner-search">
-              <input placeholder={inputValue} type="text" maxLength={5} />
+              <input placeholder={inputValue} type="text" />
               <S.SearchIcon />
             </div>
           )}

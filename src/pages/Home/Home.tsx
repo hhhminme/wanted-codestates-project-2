@@ -1,21 +1,58 @@
 import React from "react";
-import styled from "styled-components";
+
+import * as S from "./style";
 import Header from "../../components/Header";
+import MainSearch from "../../components/MainSearch";
 const Home = () => {
   return (
-    <Wrap>
+    <S.Wrap>
       <Header />
-      <div>홈입니다.</div>
-    </Wrap>
+      <S.MainSection>
+        <S.ContentMainWrap>
+          <S.ContentMain>
+            <img
+              className="content-left__img"
+              src="/img/covid_left.png"
+              alt="마스크를 쓰고 핸드폰을 하는 배찌"
+            />
+            <img
+              className="content-left__bg"
+              src="/img/main_left_bg.png"
+              alt="마스크를 쓰고 있는 다오"
+            />
+            <img
+              className="content-right__img"
+              src="/img/covid_right.png"
+              alt="마스크를 쓰고 핸드폰을 하는 배찌"
+            />
+            <img
+              className="content-right__bg"
+              src="/img/main_right_bg.png"
+              alt="마스크를 쓰고 있는 다오"
+            />
+            <div className="content-title">
+              <p className="content-title__openapi">
+                <a
+                  href="https://developers.nexon.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  넥슨 오픈API 기반
+                </a>
+              </p>
+              <p className="content-title__search">
+                카트라이더 <span>전적</span> 검색
+              </p>
+              <div className="content-title__box">
+                <p>사회적거리두기</p>
+              </div>
+            </div>
+            <MainSearch />
+          </S.ContentMain>
+        </S.ContentMainWrap>
+      </S.MainSection>
+    </S.Wrap>
   );
 };
-
-const Wrap = styled.div`
-  width: 100%;
-  height: 100vh;
-  min-width: 1000px;
-  position: relative;
-  overflow-y: hidden;
-`;
 
 export default Home;
