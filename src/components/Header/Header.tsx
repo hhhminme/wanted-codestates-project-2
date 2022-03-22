@@ -107,20 +107,31 @@ const Header = () => {
       {/* header saction */}
       <S.HeaderSection>
         <S.SectionInner>
-          <div className="inner_tap">
+          <div className="inner-tap">
             <ul>
               {tabAddress.map((value, index) => (
                 <li key={index}>
-                  <Link to={value.addr} onClick={() => dispatch(set(index))}>
+                  <Link
+                    className={`${
+                      tabCount === index
+                        ? "inner-tap__active"
+                        : "inner-tap__link"
+                    }`}
+                    to={value.addr}
+                    onClick={() => dispatch(set(index))}
+                  >
                     {value.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="inner_search">
-            <input placeholder="닉네임 검색" />
-          </div>
+          {tabCount !== 0 && (
+            <div className="inner-search">
+              <input placeholder="닉네임 검색" type="text" maxLength={5} />
+              <S.SearchIcon />
+            </div>
+          )}
         </S.SectionInner>
       </S.HeaderSection>
     </S.HeaderWrapper>

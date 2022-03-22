@@ -1,5 +1,6 @@
+import styled from "styled-components";
 import { BsFillCaretDownFill, BsFillCaretUpFill } from "react-icons/bs";
-import styled, { keyframes } from "styled-components";
+import { AiOutlineSearch } from "react-icons/ai";
 
 export const HeaderWrapper = styled.div`
   background-color: #fff;
@@ -133,7 +134,7 @@ export const SectionInner = styled.div`
   @media (max-width: 1630px) {
     width: 1000px;
   }
-  .inner_tap {
+  .inner-tap {
     display: inline-block;
 
     ul {
@@ -143,14 +144,30 @@ export const SectionInner = styled.div`
       li {
         width: 140px;
         text-align: center;
-        a {
+
+        .inner-tap__link {
           display: block;
           width: 100px;
           color: #fff;
           opacity: 0.5;
           text-decoration: none;
         }
-        a:hover {
+
+        .inner-tap__active {
+          display: block;
+          width: 100px;
+          color: #fff;
+          opacity: 0.5;
+          text-decoration: none;
+          border-bottom: 4px solid #fff;
+          opacity: 1;
+          border-bottom: 4px solid #fff;
+          height: 55px;
+          overflow-y: hidden;
+          box-sizing: border-box;
+        }
+
+        .inner-tap__link:hover {
           opacity: 1;
           border-bottom: 4px solid #fff;
           height: 55px;
@@ -161,4 +178,35 @@ export const SectionInner = styled.div`
       }
     }
   }
+
+  .inner-tap,
+  inner-search {
+    flex: none;
+  }
+
+  .inner-search {
+    display: flex;
+    margin-left: auto;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    width: 220px;
+    opacity: 0.5;
+    border-bottom: 1px solid #fff;
+    input {
+      flex: 1;
+      background: none;
+      color: #fff;
+      border: 0;
+      outline: none;
+    }
+    input::placeholder {
+      color: #fff;
+    }
+  }
+`;
+
+export const SearchIcon = styled(AiOutlineSearch)`
+  color: #fff;
+  font-size: 20px;
+  margin: auto 5px;
 `;
