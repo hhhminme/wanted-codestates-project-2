@@ -1,17 +1,14 @@
-import React, { useState } from "react";
-import { useAppSelector, useAppDispatch } from "../../redux/hooks";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
-import { Link } from "react-router-dom";
+import { useAppSelector, useAppDispatch } from "../../redux/hooks";
 import { set } from "../../redux/tabSlice";
 import * as S from "./style";
 
-const Header = () => {
-  const [showOption, setShowOption] = useState(false);
-  // The `state` arg is correctly typed as `RootState` already
-  const tabCount = useAppSelector((state) => state.tabCounter.value);
-  const dispatch = useAppDispatch();
-
-  console.log(tabCount);
+interface Props {
+  searchId: string;
+}
+const Header = ({ searchId }: Props) => {
   const tabAddress = [
     {
       name: "홈",
@@ -30,6 +27,27 @@ const Header = () => {
       addr: "/track",
     },
   ];
+  const [showOption, setShowOption] = useState(false);
+  const tabCount = useAppSelector((state) => state.tabCounter.value);
+  const [inputValue, setInputValue] = useState("");
+  const dispatch = useAppDispatch();
+  const location = useLocation();
+
+  useEffect(() => {
+    // eslint-disable-next-line array-callback-return
+    tabAddress.map((value, index) => {
+      if (value.addr === location.pathname) {
+        dispatch(set(index));
+      }
+    });
+
+    if (tabCount === 1) {
+      setInputValue("랭커 검색");
+    } else {
+      setInputValue("닉네임 검색");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tabCount, location]);
 
   return (
     <S.HeaderWrapper>
@@ -128,7 +146,7 @@ const Header = () => {
           </div>
           {tabCount !== 0 && (
             <div className="inner-search">
-              <input placeholder="닉네임 검색" type="text" maxLength={5} />
+              <input placeholder={inputValue} type="text" maxLength={5} />
               <S.SearchIcon />
             </div>
           )}
