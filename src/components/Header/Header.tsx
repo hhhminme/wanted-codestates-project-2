@@ -1,13 +1,40 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import { useAppSelector, useAppDispatch } from "../../redux/hooks";
+
 import { Link } from "react-router-dom";
-import { BsFillCaretDownFill, BsFillCaretUpFill } from "react-icons/bs";
+import { set } from "../../redux/tabSlice";
+import * as S from "./style";
+
 const Header = () => {
   const [showOption, setShowOption] = useState(false);
+  // The `state` arg is correctly typed as `RootState` already
+  const tabCount = useAppSelector((state) => state.tabCounter.value);
+  const dispatch = useAppDispatch();
+
+  console.log(tabCount);
+  const tabAddress = [
+    {
+      name: "홈",
+      addr: "/",
+    },
+    {
+      name: "랭킹",
+      addr: "/rank",
+    },
+    {
+      name: "카트",
+      addr: "/body",
+    },
+    {
+      name: "트랙",
+      addr: "/track",
+    },
+  ];
+
   return (
-    <HeaderWrapper>
+    <S.HeaderWrapper>
       {/* header util  */}
-      <HeaderUtilWrap>
+      <S.HeaderUtilWrap>
         <div className="util-inner">
           <li
             className="util-inner__logoWrap"
@@ -21,7 +48,7 @@ const Header = () => {
                   className="util-inner__img"
                 />
               </Link>
-              <span>{showOption ? <CloseBtn /> : <OpenBtn />}</span>
+              <span>{showOption ? <S.CloseBtn /> : <S.OpenBtn />}</span>
             </div>
           </li>
           <li className="util-inner__tmiWrap">
@@ -48,7 +75,7 @@ const Header = () => {
           </li>
         </div>
         {showOption && (
-          <DownMenu>
+          <S.DownMenu>
             <h3>
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfB0SygT6AG-pZHwN2GD8Kry-5iCd_OmsP7ZSqBcxz_SLKpnw/viewform"
@@ -64,136 +91,40 @@ const Header = () => {
                 <div>
                   <Link to="/" className="downmenu-link__kart">
                     <span>
-                      <img src="img/header_list_logo.png"></img>
+                      <img
+                        src="img/header_list_logo.png"
+                        alt="카트라이더 로고"
+                      ></img>
                     </span>
                     <span>카트라이더</span>
                   </Link>
                 </div>
               </li>
             </ul>
-          </DownMenu>
+          </S.DownMenu>
         )}
-      </HeaderUtilWrap>
+      </S.HeaderUtilWrap>
       {/* header saction */}
-      <div></div>
-    </HeaderWrapper>
+      <S.HeaderSection>
+        <S.SectionInner>
+          <div className="inner_tap">
+            <ul>
+              {tabAddress.map((value, index) => (
+                <li key={index}>
+                  <Link to={value.addr} onClick={() => dispatch(set(index))}>
+                    {value.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="inner_search">
+            <input placeholder="닉네임 검색" />
+          </div>
+        </S.SectionInner>
+      </S.HeaderSection>
+    </S.HeaderWrapper>
   );
 };
 
-const HeaderWrapper = styled.div`
-  background-color: #fff;
-  overflow-y: hidden;
-`;
-const HeaderUtilWrap = styled.div`
-  width: 1300px;
-  background-color: white;
-  margin: auto;
-  height: 48px;
-  line-height: 48px;
-  overflow-y: hidden;
-
-  @media (max-width: 1630px) {
-    width: 1000px;
-  }
-
-  .util-inner {
-    display: flex;
-  }
-
-  .util-inner__logoWrap :hover {
-    background-color: #f2f2f2;
-    box-sizing: border-box;
-  }
-
-  .util-inner__img {
-    padding: 0px 10px 0px 10px;
-  }
-
-  .util-inner__logoWrap,
-  .util-inner__tmiWrap,
-  .util-inner__kartLink {
-    flex: none;
-  }
-  .util-inner__kartLink {
-    margin-left: auto;
-
-    a {
-      font-size: 12px;
-      color: #6c7a89;
-      text-decoration: none;
-    }
-  }
-`;
-
-const DownMenu = styled.div`
-  position: absolute;
-  background-color: #fff;
-  border: 1px solid #f2f2f2;
-  padding: 12px;
-  z-index: 25;
-
-  h3 {
-    line-height: 30px;
-    font-size: 12px;
-    font-weight: 400;
-    margin-bottom: 10px;
-    color: #07f;
-    border-bottom: 1px solid #f2f2f2;
-    padding-left: 10px;
-    padding-right: 10px;
-
-    a {
-      text-decoration: none;
-      color: #07f;
-
-      img {
-        vertical-align: middle;
-      }
-
-      span {
-        margin-left: 3px;
-      }
-    }
-  }
-
-  ul {
-    list-style: none;
-
-    li {
-      margin-bottom: 5px;
-      padding: 2px 10px 2px 10px;
-
-      div {
-        line-height: 22px;
-
-        .downmenu-link__kart {
-          padding: 0;
-          margin: 0;
-          font-size: 100%;
-          vertical-align: baseline;
-          background: transparent;
-          text-decoration: none;
-          color: black;
-        }
-
-        img {
-          border-radius: 8px;
-          margin-right: 5px;
-          vertical-align: middle;
-          width: 30px;
-          height: 30px;
-        }
-      }
-    }
-  }
-`;
-
-const OpenBtn = styled(BsFillCaretDownFill)`
-  font-size: 12px;
-  color: #ccc;
-`;
-const CloseBtn = styled(BsFillCaretUpFill)`
-  font-size: 12px;
-  color: #ccc;
-`;
 export default Header;
