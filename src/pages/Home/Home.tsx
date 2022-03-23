@@ -4,6 +4,7 @@ import * as S from "./style";
 import Header from "../../components/Header";
 import MainSearch from "../../components/MainSearch";
 import ContentBox from "../../components/ContentBox";
+import Footer from "../../components/Footer";
 const Home = () => {
   return (
     <S.Wrap>
@@ -55,20 +56,7 @@ const Home = () => {
         <ContentBox title={"TMI 업데이트 로그"} type={"news"}></ContentBox>
         <ContentBox title={"카트라이더 TMI 영상"} type={"video"}></ContentBox>
       </S.HomeContent>
-      <S.Footer>
-        <div>
-          <img src="img/lab_logo.svg" alt="INTELLIGENCE LABS 로고"></img>
-          <span>Data based on NEXON DEVELOPERS</span>
-        </div>
-        <div>
-          <ul>
-            <li>About TMI</li>
-            <li>문의/피드백</li>
-            <li>업데이트 로그</li>
-            <li>채용</li>
-          </ul>
-        </div>
-      </S.Footer>
+      <Footer />
     </S.Wrap>
   );
 };

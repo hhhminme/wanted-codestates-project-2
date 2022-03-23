@@ -128,12 +128,3 @@ export const HomeContent = styled.div`
     width: 1000px;
   }
 `;
-
-export const Footer = styled.footer`
-  background-color: #fafafa;
-  width: 1300px;
-  @media (max-width: 1630px) {
-    width: 1000px;
-  }
-  margin: 0 auto;
-`;

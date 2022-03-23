@@ -44,3 +44,22 @@ export const videoData = [
     subTitle: "형독방송",
   },
 ];
+
+export const footerInfo = [
+  {
+    info: "About TMI",
+    infoUrl: "/",
+  },
+  {
+    info: "문의/피드백",
+    infoUrl: "https://goo.gl/forms/gVRtyj8ZuEvos8Nt1",
+  },
+  {
+    info: "About TMI",
+    infoUrl: "/kart/board",
+  },
+  {
+    info: "채용",
+    infoUrl: "https://career.nexon.com/common/main",
+  },
+];

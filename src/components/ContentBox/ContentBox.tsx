@@ -1,6 +1,6 @@
 import React from "react";
 import * as S from "./style";
-import { newsData, videoData } from "./MockData";
+import { newsData, videoData } from "../../utils/MockData";
 
 interface Props {
   title: string;
