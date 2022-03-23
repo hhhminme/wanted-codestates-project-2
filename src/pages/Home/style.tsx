@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 export const Wrap = styled.div`
+  position: relative;
   width: 100%;
   height: 100vh;
   min-width: 1000px;
 `;
 
 export const MainSection = styled.section`
+  position: relative;
   margin: 0;
   padding: 0;
   border: 0;
@@ -19,25 +21,25 @@ export const ContentMainWrap = styled.div`
   position: absolute;
   height: 655px;
   margin-top: -55px;
+  top: 0;
   width: 100%;
-  z-index: 0;
+  z-index: 100;
+  overflow: hidden;
   background-size: cover;
   background-position: 50%;
-  overflow: hidden;
   background-image: url("img/main_bg1.png");
-  text-align: center;
 `;
 
 export const ContentMain = styled.div`
   position: relative;
   width: 1600px;
-  height: 100%;
-
-  z-index: 30;
+  height: 550px;
   margin: 0 auto;
-
+  text-align: center;
+  padding-top: 200px;
+  overflow: hidden;
+  z-index: 150;
   .content-title {
-    padding-top: 200px;
     padding-bottom: 50px;
   }
 
@@ -79,6 +81,7 @@ export const ContentMain = styled.div`
 
   .content-left__img {
     position: absolute;
+    z-index: 150;
     top: 200px;
     left: 80px;
     width: 380px;
@@ -86,6 +89,7 @@ export const ContentMain = styled.div`
 
   .content-left__bg {
     position: absolute;
+    z-index: 150;
     left: 0;
     top: 200px;
   }
@@ -93,12 +97,25 @@ export const ContentMain = styled.div`
   .content-right__img {
     position: absolute;
     top: 200px;
+    z-index: 150;
     right: 80px;
     width: 380px;
   }
   .content-right__bg {
     position: absolute;
     right: 0;
+    z-index: 150;
     top: 200px;
   }
+`;
+
+export const HomeContent = styled.div`
+  display: flex;
+  position: absolute;
+  top: 620px;
+  left: 50%;
+  z-index: 200;
+  transform: translate(-50%, 0%);
+  width: 1300px;
+  border: 1px solid;
 `;

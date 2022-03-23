@@ -120,7 +120,7 @@ const Header = () => {
         )}
       </S.HeaderUtilWrap>
       {/* header saction */}
-      <S.HeaderSection>
+      <S.HeaderSection tabCount={tabCount}>
         <S.SectionInner>
           <div className="inner-tap">
             <ul>

@@ -2,6 +2,10 @@ import styled from "styled-components";
 import { BsFillCaretDownFill, BsFillCaretUpFill } from "react-icons/bs";
 import { AiOutlineSearch } from "react-icons/ai";
 
+interface Props {
+  tabCount: number;
+}
+
 export const HeaderWrapper = styled.div`
   background-color: #fff;
   overflow-y: hidden;
@@ -52,8 +56,7 @@ export const DownMenu = styled.div`
   background-color: #fff;
   border: 1px solid #f2f2f2;
   padding: 12px;
-  z-index: 25;
-
+  z-index: 150;
   h3 {
     line-height: 30px;
     font-size: 12px;
@@ -121,16 +124,18 @@ export const CloseBtn = styled(BsFillCaretUpFill)`
 
 // header section
 
-export const HeaderSection = styled.div`
-  background-color: #005fcc;
+export const HeaderSection = styled.div<Props>`
+  position: absolute;
+  background-color: ${(props) => (props.tabCount === 0 ? "none" : "#005fcc")};
   overflow-y: hidden;
+  z-index: 200;
+  width: 100%;
 `;
 
 export const SectionInner = styled.div`
   display: flex;
   width: 1300px;
   margin: 0 auto;
-
   @media (max-width: 1630px) {
     width: 1000px;
   }
