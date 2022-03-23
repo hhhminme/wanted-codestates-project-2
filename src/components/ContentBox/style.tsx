@@ -29,3 +29,26 @@ export const BoxContent = styled.div`
   background-size: cover;
   background-position: 50%;
 `;
+
+export const NewsContent = styled.div`
+  margin: 0px 20px;
+  color: #1f334a;
+  .news-header {
+    background-color: #fbfbfb;
+  }
+  .news-title {
+    padding: 10px 0px;
+    width: 90%;
+  }
+  .news-date {
+    width: 10%;
+  }
+
+  .news-title__content {
+    padding: 10px 5px;
+  }
+
+  .news-title__img {
+    width: 12px;
+  }
+`;

@@ -52,8 +52,8 @@ const Home = () => {
         </S.ContentMain>
       </S.MainSection>
       <S.HomeContent>
-        <ContentBox title={"TMI 업데이트 로그"}></ContentBox>
-        <ContentBox title={"카트라이더 TMI 영상"}></ContentBox>
+        <ContentBox title={"TMI 업데이트 로그"} type={"news"}></ContentBox>
+        <ContentBox title={"카트라이더 TMI 영상"} type={"video"}></ContentBox>
       </S.HomeContent>
       <div>footer</div>
     </S.Wrap>
