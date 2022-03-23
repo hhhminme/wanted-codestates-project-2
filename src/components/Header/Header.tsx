@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-
 import { useAppSelector, useAppDispatch } from "../../redux/hooks";
 import { set } from "../../redux/tabSlice";
 import * as S from "./style";

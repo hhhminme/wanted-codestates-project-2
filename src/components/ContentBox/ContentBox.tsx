@@ -1,8 +1,17 @@
 import React from "react";
 import * as S from "./style";
-
-const ContentBox = () => {
-  return <S.BoxWrap>ContentBox</S.BoxWrap>;
+interface Props {
+  title: string;
+}
+const ContentBox = ({ title }: Props) => {
+  return (
+    <S.BoxWrap>
+      <h5 className="box-title__wrap">
+        <span className="box-title__content">{title}</span>
+      </h5>
+      <S.BoxContent></S.BoxContent>
+    </S.BoxWrap>
+  );
 };
 
 export default ContentBox;

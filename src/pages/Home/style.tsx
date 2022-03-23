@@ -112,10 +112,11 @@ export const ContentMain = styled.div`
 export const HomeContent = styled.div`
   display: flex;
   position: absolute;
+  box-sizing: border-box;
   top: 620px;
+  padding: 10px;
   left: 50%;
   z-index: 200;
   transform: translate(-50%, 0%);
   width: 1300px;
-  border: 1px solid;
 `;
