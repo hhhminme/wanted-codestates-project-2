@@ -19,6 +19,9 @@ export const SelectIcon = styled(BsFillCaretDownFill)`
 export const SearchWrap = styled.div`
   display: flex;
   width: 700px;
+  @media (max-width: 1630px) {
+    width: 600px;
+  }
   height: 67px;
   box-sizing: border-box;
   padding: 5px 30px;

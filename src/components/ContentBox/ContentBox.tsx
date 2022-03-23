@@ -40,7 +40,19 @@ const ContentBox = ({ title, type }: Props) => {
             </table>
           </S.NewsContent>
         ) : (
-          <div>비디오</div>
+          <S.VideoContent>
+            {videoData.map((val, idx) => (
+              <div className="video-card">
+                <div className="video-img__wrap">
+                  <S.VideoImg videoUrl={val.imgUrl}></S.VideoImg>
+                </div>
+                <div>
+                  <p>{val.title}</p>
+                  <p>{val.subTitle}</p>
+                </div>
+              </div>
+            ))}
+          </S.VideoContent>
         )}
       </S.BoxContent>
     </S.BoxWrap>

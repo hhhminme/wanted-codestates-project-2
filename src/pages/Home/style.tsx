@@ -33,6 +33,10 @@ export const ContentMainWrap = styled.div`
 export const ContentMain = styled.div`
   position: relative;
   width: 1600px;
+
+  @media (max-width: 1630px) {
+    width: 1500px;
+  }
   height: 550px;
   margin: 0 auto;
   text-align: center;

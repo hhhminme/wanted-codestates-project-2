@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface Props {
+  videoUrl: string;
+}
+
 export const BoxWrap = styled.div`
   display: flex;
   flex-direction: column;
@@ -33,6 +37,12 @@ export const BoxContent = styled.div`
 export const NewsContent = styled.div`
   margin: 0px 20px;
   color: #1f334a;
+
+  th,
+  td {
+    cursor: pointer;
+  }
+
   .news-header {
     background-color: #fbfbfb;
   }
@@ -50,5 +60,48 @@ export const NewsContent = styled.div`
 
   .news-title__img {
     width: 12px;
+  }
+`;
+
+export const VideoContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  padding: 30px;
+  box-sizing: border-box;
+  .video-card {
+    border: 1px solid ridge;
+  }
+
+  .video-img__wrap {
+    height: 85px;
+
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  P {
+    font-size: 12px;
+    line-height: 14px;
+    overflow: hidden;
+    font-weight: 600;
+    margin-bottom: 10px;
+
+    :last-child {
+      color: #a1a1a1;
+      font-weight: 400;
+    }
+  }
+`;
+
+export const VideoImg = styled.div<Props>`
+  background-image: url(${(props) => props.videoUrl});
+  height: 100%;
+  background-size: cover;
+  background-position: 50%;
+
+  :hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
   }
 `;
