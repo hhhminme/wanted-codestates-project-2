@@ -71,11 +71,19 @@ export const VideoContent = styled.div`
   box-sizing: border-box;
   .video-card {
     border: 1px solid ridge;
+    @media (max-width: 1630px) {
+      :last-child {
+        display: none;
+      }
+    }
   }
 
   .video-img__wrap {
     height: 85px;
-
+    @media (max-width: 1630px) {
+      height: 100px;
+      width: 205px;
+    }
     overflow: hidden;
     margin-bottom: 20px;
   }

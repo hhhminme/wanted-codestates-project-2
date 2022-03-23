@@ -5,6 +5,7 @@ export const Wrap = styled.div`
   width: 100%;
   height: 100vh;
   min-width: 1000px;
+  background-color: #fafafa;
 `;
 
 export const MainSection = styled.section`
@@ -33,7 +34,6 @@ export const ContentMainWrap = styled.div`
 export const ContentMain = styled.div`
   position: relative;
   width: 1600px;
-
   @media (max-width: 1630px) {
     width: 1500px;
   }
@@ -41,6 +41,7 @@ export const ContentMain = styled.div`
   margin: 0 auto;
   text-align: center;
   padding-top: 200px;
+  padding-bottom: 200px;
   overflow: hidden;
   z-index: 150;
   .content-title {
@@ -123,4 +124,16 @@ export const HomeContent = styled.div`
   z-index: 200;
   transform: translate(-50%, 0%);
   width: 1300px;
+  @media (max-width: 1630px) {
+    width: 1000px;
+  }
+`;
+
+export const Footer = styled.footer`
+  background-color: #fafafa;
+  width: 1300px;
+  @media (max-width: 1630px) {
+    width: 1000px;
+  }
+  margin: 0 auto;
 `;
